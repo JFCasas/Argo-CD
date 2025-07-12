@@ -6,8 +6,21 @@ nameSuffix: -dev
 
 resources:
   - ../../base
+  - namespace.yaml
 
-patchesStrategicMerge:
-  - deployment-patch.yaml
-  - service-patch.yaml
-  - secret-patch.yaml
+patches:
+  - path: deployment-patch.yaml
+    target:
+      kind: Deployment
+      name: redis
+
+  - path: service-patch.yaml
+    target:
+      kind: Service
+      name: redis
+
+  - path: secret-patch.yaml
+    target:
+      kind: Secret
+      name: conexion
+
