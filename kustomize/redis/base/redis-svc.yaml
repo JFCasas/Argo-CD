@@ -1,4 +1,4 @@
-apiVersion: v1
+aapiVersion: v1
 kind: Service
 metadata:
   name: redis
@@ -9,8 +9,9 @@ spec:
   selector:
     app: redis
   ports:
-  - name: redis            # ← este campo es obligatorio
+  - name: redis           # ← obligatorio
     protocol: TCP
     port: 6379
     targetPort: 6379
+
 

@@ -4,6 +4,6 @@ metadata:
   name: redis
 spec:
   ports:
-  - protocol: TCP
+  - name: redis
     port: 6378
     targetPort: 6379

@@ -4,6 +4,7 @@ metadata:
   name: redis
 spec:
   ports:
-  - protocol: TCP
+  - name: redis           # ← referenciar el mismo elemento
     port: 6377
     targetPort: 6379
+
