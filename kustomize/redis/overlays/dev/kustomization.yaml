@@ -2,25 +2,20 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-namespace: redis-dev          # ← el destino Kubernetes
-nameSuffix: -dev              # ← sufijo añadido a *todos* los objetos
+namespace: redis-dev          # los objetos vivirán aquí
+nameSuffix: -dev              # añade “-dev” a TODOS los nombres
 
 resources:
-  - ../../base                # capa base (ya corregida)
+  - ../../base                # Deployment, Service y Secret de la capa base
   - namespace.yaml            # único Namespace de este overlay
 
-patches:                      # 🡇 lista de parches con selectors
+patches:
   - path: deployment-patch.yaml
     target:
       kind: Deployment
-      name: redis             # ← nombre ORIGINAL (sin sufijo)
-
-  - path: service-patch.yaml
-    target:
-      kind: Service
       name: redis
-
   - path: secret-patch.yaml
     target:
       kind: Secret
       name: conexion
+

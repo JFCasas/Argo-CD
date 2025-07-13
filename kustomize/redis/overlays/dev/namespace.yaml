@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: redis                 # «redis»  ➜  nameSuffix ⇒ redis-dev
+  name: redis                # Kustomize lo convertirá en “redis-dev”
   labels:
     env: dev
 
