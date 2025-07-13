@@ -1,4 +1,8 @@
+# overlays/dev/namespace.yaml
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: redis-dev
+  name: redis                 # «redis»  ➜  nameSuffix ⇒ redis-dev
+  labels:
+    env: dev
+

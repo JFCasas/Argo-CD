@@ -1,6 +1,7 @@
+# overlays/dev/deployment-patch.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: redis
+  name: redis                 # nombre ORIGINAL (sin sufijo)
 spec:
-  replicas: 1 
+  replicas: 1                 # único ajuste para dev
